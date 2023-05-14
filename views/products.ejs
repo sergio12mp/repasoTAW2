@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1></h1>
+
+<table border="1">
+    <tr>
+        <th>PRODUCT_ID</th>
+        <th>MANUFACTURER_ID</th>
+        <th>PRODUCT_CODE</th>
+        <th>PURCHASE_COST</th>
+        <th>QUANTITY_ON_HAND</th>
+        <th>MARKUP</th>
+        <th>AVAILABLE</th>
+        <th>DESCRIPTION</th>
+        <th>EDITAR</th>
+        <th>BORRAR</th>
+
+    </tr>
+    <% productos.forEach(function(producto) { %>
+        <tr>
+            <td> <%= producto.PRODUCT_ID %> </td>
+            <td> <%= producto.MANUFACTURER_ID %> </td>
+            <td> <%= producto.PRODUCT_CODE %> </td>
+            <td> <%= producto.PURCHASE_COST %> </td>
+            <td> <%= producto.QUANTITY_ON_HAND %> </td>
+            <td> <%= producto.MARKUP %> </td>
+            <td> <%= producto.AVAILABLE %> </td>
+            <td> <%= producto.DESCRIPTION %> </td>
+            <td> <a href="/product/<%= producto.PRODUCT_ID %>">Editar</a> </td>
+            <td> <a href="/borrarProductos/<%= producto.PRODUCT_ID %>">Borrar</a> </td>
+
+        </tr>
+    <% }); %>
+</table>
+<a href="/newProduct">Nuevo ...</a>
+</body>
+</html>

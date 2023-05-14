@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1></h1>
+
+<form action="/guardarProductos" method="post">
+    <h1>Datos del PRODUCTO</h1>
+    <input type="hidden" name="PRODUCT_ID" value="<%= (producto ? producto.PRODUCT_ID : '') %>" size="30"
+           maxlength="30">
+    <table>
+        <tr>
+            <td>MANUFACTER_ID: </td>
+            <td> <input type="number" name="MANUFACTURER_ID" value="<%= (producto ? producto.MANUFACTURER_ID: '') %>"> </td>
+        </tr>
+        <tr>
+            <td>PRODUCT_CODE: </td>
+            <td> <input type="text" name="PRODUCT_CODE" value="<%= (producto ? producto.PRODUCT_CODE: '') %>" size="40" maxlength="40">  </td>
+        </tr>
+        <tr>
+            <td>PURCHASE: </td>
+            <td> <input type="text" name="PURCHASE_COST" value="<%= (producto ? producto.PURCHASE_COST: '') %>" size="30" maxlength="30">
+                <input type="text" name="QUANTITY_ON_HAND" value="<%= (producto ? producto.QUANTITY_ON_HAND: '') %>" size="30" maxlength="30">
+            </td>
+        </tr>
+        <tr>
+            <td>MARKUP: </td>
+            <td> <input type="text" name="MARKUP" value="<%= (producto ? producto.MARKUP: '') %>" size="25" maxlength="25">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <% if(producto.AVAILABLE.toString()=="TRUE"){
+                %>
+                    <input type="radio" name="AVAILABLE" value="y" checked>Yes
+                    <input type="radio" name="AVAILABLE" value="x">No
+                <%}else{ %>
+                    <input type="radio" name="AVAILABLE" value="y" >Yes
+                    <input type="radio" name="AVAILABLE" value="x"checked>No
+                <%}
+                %>
+            </td>
+        </tr>
+        <tr>
+            <td>DESCRIPTION: </td>
+            <td> <input type="text" name="DESCRIPTION" value="<%= (producto ? producto.DESCRIPTION: '') %>" size="12" maxlength="12">
+            </td>
+        </tr>
+
+    </table>
+    <button>Guardar</button>
+</form>
+</body>
+</html>

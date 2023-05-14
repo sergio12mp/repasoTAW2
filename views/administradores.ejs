@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1></h1>
+
+<table border="1">
+    <tr>
+        <th>ADMINID</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+
+
+    </tr>
+    <% administrador.forEach(function(administrador) { %>
+        <tr>
+            <td> <%= administrador.ADMIN_ID %> </td>
+            <td> <%= administrador.EMAIL %> </td>
+            <td> <%= administrador.PASSWORD %> </td>
+
+            <td> <a href="/administrador/<%= administrador.ADMIN_ID %>">Editar</a> </td>
+            <td> <a href="/borrarAdministrador/<%= administrador.ADMIN_ID %>">Borrar</a> </td>
+
+        </tr>
+    <% }); %>
+</table>
+<a href="/newAdmin">Nuevo ...</a>
+</body>
+</html>
